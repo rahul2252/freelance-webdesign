@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/*
+  Color tokens mirror `clientConfig.theme.colors` in src/client.config.ts.
+  Tailwind v4 reads theme from CSS, so when re-theming for a new client,
+  update both this block and the config object to keep them in sync.
+*/
+:root {
+  --color-cream: #f7f3ec;
+  --color-beige: #ede4d6;
+  --color-stone: #dcd2c2;
+  --color-charcoal: #2a2622;
+  --color-ink: #1c1a17;
+  --color-accent: #a9564f;
+  --color-accent-dark: #82403b;
+
+  --background: var(--color-cream);
+  --foreground: var(--color-ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cream: var(--color-cream);
+  --color-beige: var(--color-beige);
+  --color-stone: var(--color-stone);
+  --color-charcoal: var(--color-charcoal);
+  --color-ink: var(--color-ink);
+  --color-accent: var(--color-accent);
+  --color-accent-dark: var(--color-accent-dark);
+  --font-serif: var(--font-display);
+  --font-sans: var(--font-body);
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Scroll-triggered fade-in, used by <Reveal> */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Floating WhatsApp button pulse */
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(70, 172, 96, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(70, 172, 96, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(70, 172, 96, 0);
+  }
+}
+
+.animate-whatsapp-pulse {
+  animation: whatsapp-pulse 2.4s ease-out infinite;
+}
+
+/* Hover-zoom for product/story imagery */
+.img-zoom {
+  overflow: hidden;
+}
+
+.img-zoom img {
+  transition: transform 0.6s ease;
+}
+
+.img-zoom:hover img {
+  transform: scale(1.06);
+}

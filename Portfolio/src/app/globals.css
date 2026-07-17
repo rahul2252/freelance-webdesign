@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+/*
+  Color tokens mirror `clientConfig.theme.colors` in src/client.config.ts.
+  Dark neo-brutalist base: near-black with an acid-green primary accent and
+  a magenta secondary pop. Fixed palette, not adapted to OS light/dark.
+*/
+:root {
+  --color-ink: #0a0a0a;
+  --color-panel: #141414;
+  --color-paper: #f5f5f0;
+  --color-acid: #d6ff3f;
+  --color-magenta: #ff3dbb;
+
+  --background: var(--color-ink);
+  --foreground: var(--color-paper);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--color-ink);
+  --color-panel: var(--color-panel);
+  --color-paper: var(--color-paper);
+  --color-acid: var(--color-acid);
+  --color-magenta: var(--color-magenta);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-serif: var(--font-display);
+  --font-sans: var(--font-body);
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Neo-brutalist hard border + offset shadow (no blur) — pair with a
+   Tailwind border-{color} utility to set the color explicitly. */
+.brutal-border {
+  border-width: 2px;
+  border-style: solid;
+}
+
+.brutal-shadow {
+  box-shadow: 8px 8px 0 0 var(--color-acid);
+}
+
+.brutal-shadow-magenta {
+  box-shadow: 8px 8px 0 0 var(--color-magenta);
+}
+
+/* Continuous marquee ticker, used by <Marquee> */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-scroll 26s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Floating WhatsApp button pulse */
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(70, 172, 96, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(70, 172, 96, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(70, 172, 96, 0);
+  }
+}
+
+.animate-whatsapp-pulse {
+  animation: whatsapp-pulse 2.4s ease-out infinite;
+}
+
+/* Acid underline hover, used on nav + text links */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: var(--color-acid);
+  transition: width 0.35s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Custom cursor, used by <CustomCursor> — desktop pointer devices only */
+@media (pointer: fine) {
+  .cursor-none-desktop {
+    cursor: none;
+  }
+}

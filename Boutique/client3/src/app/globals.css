@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/*
+  Color tokens mirror `clientConfig.theme.colors` in src/client.config.ts.
+  This brand is deliberately bold/dark — near-black base with a vivid cobalt
+  accent, built for a contemporary streetwear drop site, not adapted to the
+  visitor's OS light/dark preference.
+*/
+:root {
+  --color-void: #111214;
+  --color-concrete: #1d1f23;
+  --color-steel: #2c2f36;
+  --color-frost: #f2f3f5;
+  --color-cobalt: #3d63f5;
+  --color-cobalt-soft: #6e8afa;
+
+  --background: var(--color-void);
+  --foreground: var(--color-frost);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-void: var(--color-void);
+  --color-concrete: var(--color-concrete);
+  --color-steel: var(--color-steel);
+  --color-frost: var(--color-frost);
+  --color-cobalt: var(--color-cobalt);
+  --color-cobalt-soft: var(--color-cobalt-soft);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-serif: var(--font-display);
+  --font-sans: var(--font-body);
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Floating WhatsApp button pulse */
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(70, 172, 96, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(70, 172, 96, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(70, 172, 96, 0);
+  }
+}
+
+.animate-whatsapp-pulse {
+  animation: whatsapp-pulse 2.4s ease-out infinite;
+}
+
+/* Cobalt underline hover, used on nav + text links */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: var(--color-cobalt);
+  transition: width 0.35s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Drag-scroll gallery, used by <DragGallery> */
+.drag-gallery-track {
+  cursor: grab;
+}
+
+.drag-gallery-track:active {
+  cursor: grabbing;
+}

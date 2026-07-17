@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "client1",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "client1", "run", "dev"],
+      "port": 3040,
+      "autoPort": true
+    },
+    {
+      "name": "client2",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "client2", "run", "dev"],
+      "port": 3041,
+      "autoPort": true
+    }
+  ]
+}

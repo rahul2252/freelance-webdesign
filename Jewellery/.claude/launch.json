@@ -1,0 +1,26 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "client1",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "client1", "run", "dev"],
+      "port": 3010,
+      "autoPort": true
+    },
+    {
+      "name": "client2",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "client2", "run", "dev"],
+      "port": 3011,
+      "autoPort": true
+    },
+    {
+      "name": "client3",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "client3", "run", "dev"],
+      "port": 3012,
+      "autoPort": true
+    }
+  ]
+}
