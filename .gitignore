@@ -21,6 +21,9 @@ build/
 # netlify
 .netlify/
 
+# cloudflare
+.wrangler/
+
 # misc
 .DS_Store
 *.pem

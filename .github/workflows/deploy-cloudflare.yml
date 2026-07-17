@@ -1,0 +1,128 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      site:
+        description: 'Site key to deploy (see README table), or "all"'
+        required: false
+        default: all
+        type: string
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      sites: ${{ steps.build-matrix.outputs.sites }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            aura_boutique: 'Boutique/client1/**'
+            ives_studio: 'Boutique/client2/**'
+            nomad_studio: 'Boutique/client3/**'
+            ora_jewellery: 'Jewellery/client1/**'
+            lumiere_jewels: 'Jewellery/client2/**'
+            ember_jewels: 'Jewellery/client3/**'
+            webdesign_studio: 'Portfolio/**'
+            bloom_salon: 'Saloon/client1/**'
+            allure_salon: 'Saloon/client2/**'
+
+      - name: Build deploy matrix
+        id: build-matrix
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          DISPATCH_SITE: ${{ inputs.site }}
+          F_aura_boutique: ${{ steps.filter.outputs.aura_boutique }}
+          F_ives_studio: ${{ steps.filter.outputs.ives_studio }}
+          F_nomad_studio: ${{ steps.filter.outputs.nomad_studio }}
+          F_ora_jewellery: ${{ steps.filter.outputs.ora_jewellery }}
+          F_lumiere_jewels: ${{ steps.filter.outputs.lumiere_jewels }}
+          F_ember_jewels: ${{ steps.filter.outputs.ember_jewels }}
+          F_webdesign_studio: ${{ steps.filter.outputs.webdesign_studio }}
+          F_bloom_salon: ${{ steps.filter.outputs.bloom_salon }}
+          F_allure_salon: ${{ steps.filter.outputs.allure_salon }}
+        run: |
+          all_sites=(aura_boutique ives_studio nomad_studio ora_jewellery lumiere_jewels ember_jewels webdesign_studio bloom_salon allure_salon)
+          selected=()
+
+          if [ "$EVENT_NAME" = "workflow_dispatch" ] && [ -n "$DISPATCH_SITE" ] && [ "$DISPATCH_SITE" != "all" ]; then
+            selected=("$DISPATCH_SITE")
+          elif [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            selected=("${all_sites[@]}")
+          else
+            for s in "${all_sites[@]}"; do
+              var="F_$s"
+              if [ "${!var}" = "true" ]; then
+                selected+=("$s")
+              fi
+            done
+          fi
+
+          if [ ${#selected[@]} -eq 0 ]; then
+            json="[]"
+          else
+            json=$(printf '"%s",' "${selected[@]}")
+            json="[${json%,}]"
+          fi
+          echo "sites=$json" >> "$GITHUB_OUTPUT"
+          echo "Selected sites: $json"
+
+  deploy:
+    needs: detect-changes
+    if: needs.detect-changes.outputs.sites != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        site: ${{ fromJson(needs.detect-changes.outputs.sites) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve site config
+        id: cfg
+        run: |
+          case "${{ matrix.site }}" in
+            aura_boutique)    path="Boutique/client1";  project="aura-boutique" ;;
+            ives_studio)      path="Boutique/client2";  project="ives-studio" ;;
+            nomad_studio)     path="Boutique/client3";  project="nomad-studio" ;;
+            ora_jewellery)    path="Jewellery/client1"; project="ora-jewellery" ;;
+            lumiere_jewels)   path="Jewellery/client2"; project="lumiere-jewels" ;;
+            ember_jewels)     path="Jewellery/client3"; project="ember-jewels" ;;
+            webdesign_studio) path="Portfolio";         project="webdesign-studio" ;;
+            bloom_salon)      path="Saloon/client1";    project="bloom-salon" ;;
+            allure_salon)     path="Saloon/client2";    project="allure-salon" ;;
+            *)
+              echo "Unknown site key: ${{ matrix.site }}" >&2
+              exit 1
+              ;;
+          esac
+          echo "path=$path" >> "$GITHUB_OUTPUT"
+          echo "project=$project" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: ${{ steps.cfg.outputs.path }}/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ${{ steps.cfg.outputs.path }}
+        run: npm ci
+
+      - name: Build static export
+        working-directory: ${{ steps.cfg.outputs.path }}
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: ${{ steps.cfg.outputs.path }}
+          command: pages deploy out --project-name=${{ steps.cfg.outputs.project }} --branch=main
