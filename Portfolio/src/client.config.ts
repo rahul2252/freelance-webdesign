@@ -7,7 +7,7 @@ export const clientConfig = {
     logoText: "WEBDESIGN STUDIO",
     tagline: "Landing pages that launch in days, not months",
     description:
-      "Webdesign Studio designs and ships high-converting landing pages, hosted on Netlify, for a fixed launch price.",
+      "Webdesign Studio designs and ships high-converting landing pages, hosted on Cloudflare Pages, for a fixed launch price.",
   },
 
   theme: {
@@ -33,7 +33,7 @@ export const clientConfig = {
     eyebrow: "Design + Build + Host — One Fixed Price",
     heading: "WE BUILD LANDING PAGES THAT WORK",
     tagline:
-      "Custom-designed, fully responsive landing pages — designed, built, and hosted on Netlify. Live in days.",
+      "Custom-designed, fully responsive landing pages — designed, built, and hosted on Cloudflare Pages. Live in days.",
     ctaLabel: "Start Your Project",
     ctaHref: "#contact",
     secondaryCtaLabel: "View Our Work",
@@ -43,7 +43,7 @@ export const clientConfig = {
 
   marquee: [
     "LANDING PAGE DESIGN",
-    "NETLIFY HOSTING",
+    "CLOUDFLARE PAGES",
     "WHATSAPP INTEGRATION",
     "MOBILE-FIRST BUILDS",
     "FAST TURNAROUND",
@@ -54,7 +54,7 @@ export const clientConfig = {
     heading: "Selected Work",
     subheading: "Live Projects",
     description:
-      "Seven live demo builds across three verticals, each in a different design tier — click through to browse the real, deployed sites.",
+      "Eight live demo builds across three verticals, each in a different design tier — click through to browse the real, deployed sites.",
     projects: [
       {
         id: "aura",
@@ -62,7 +62,7 @@ export const clientConfig = {
         category: "Boutique",
         tier: "Minimalist",
         description: "Warm, editorial clothing boutique with quiet scroll-in reveals.",
-        url: "https://aura-boutique-demo.netlify.app",
+        url: "https://aura-boutique.pages.dev",
         image: "/work/aura.png",
       },
       {
@@ -71,7 +71,7 @@ export const clientConfig = {
         category: "Boutique",
         tier: "Animated",
         description: "Resortwear studio with an auto-playing hero slideshow and marquee.",
-        url: "https://ives-studio-demo.netlify.app",
+        url: "https://ives-studio.pages.dev",
         image: "/work/ives.png",
       },
       {
@@ -80,7 +80,7 @@ export const clientConfig = {
         category: "Boutique",
         tier: "Advanced Animation",
         description: "Streetwear drop site with a drag gallery, counters, and magnetic buttons.",
-        url: "https://nomad-studio-demo.netlify.app",
+        url: "https://nomad-studio.pages.dev",
         image: "/work/nomad.png",
       },
       {
@@ -89,7 +89,7 @@ export const clientConfig = {
         category: "Jewellery",
         tier: "Minimalist",
         description: "Soft rose-gold jewellery brand, clean and quiet by design.",
-        url: "https://ora-jewellery-demo.netlify.app",
+        url: "https://ora-jewellery.pages.dev",
         image: "/work/ora.png",
       },
       {
@@ -98,7 +98,7 @@ export const clientConfig = {
         category: "Jewellery",
         tier: "Animated",
         description: "Fine jewellery atelier with a crossfade hero and parallax story.",
-        url: "https://lumiere-jewels-demo.netlify.app",
+        url: "https://lumiere-jewels-786.pages.dev",
         image: "/work/lumiere.png",
       },
       {
@@ -107,7 +107,7 @@ export const clientConfig = {
         category: "Jewellery",
         tier: "Advanced Animation",
         description: "Bold statement jewellery house with a full advanced-animation build.",
-        url: "https://ember-jewels-demo.netlify.app",
+        url: "https://ember-jewels.pages.dev",
         image: "/work/ember.png",
       },
       {
@@ -116,8 +116,17 @@ export const clientConfig = {
         category: "Salon",
         tier: "Animated",
         description: "Hair, skin & nail studio with tabbed pricing menus and a live scroll progress bar.",
-        url: "https://bloom-salon-demo-cebeb058.netlify.app",
+        url: "https://bloom-salon-5un.pages.dev",
         image: "/work/bloom.png",
+      },
+      {
+        id: "allure",
+        name: "Allure Salon & Spa",
+        category: "Salon",
+        tier: "Animated",
+        description: "Editorial-style salon & spa with a full-bleed hero and circular portrait grid.",
+        url: "https://allure-salon.pages.dev",
+        image: "/work/allure.png",
       },
     ],
   },
@@ -139,7 +148,7 @@ export const clientConfig = {
       {
         number: "03",
         title: "Build & Deploy",
-        description: "Built responsive, fast, and deployed live on Netlify hosting.",
+        description: "Built responsive, fast, and deployed live on Cloudflare Pages.",
       },
       {
         number: "04",
@@ -157,19 +166,19 @@ export const clientConfig = {
     features: [
       "Custom landing page design",
       "Fully responsive, mobile-first build",
-      "Hosted live on Netlify",
+      "Hosted live on Cloudflare Pages",
       "WhatsApp click-to-chat integration",
       "SEO-ready structure",
       "Direct WhatsApp support",
     ],
     domainNote:
-      "Hosting on a Netlify subdomain is included. If you'd like a custom domain, you're welcome to bring your own — domain purchase and yearly renewal are billed separately, at cost.",
+      "Hosting on a Cloudflare Pages subdomain is included. If you'd like a custom domain, you're welcome to bring your own — domain purchase and yearly renewal are billed separately, at cost.",
     ctaLabel: "Get Started on WhatsApp",
   },
 
   highlights: [
     { title: "Fixed Price", description: "₹4,999, no surprise costs. What you see is what you pay." },
-    { title: "Netlify Hosting Included", description: "Your site goes live on fast, reliable hosting from day one." },
+    { title: "Cloudflare Pages Hosting Included", description: "Your site goes live on fast, reliable hosting from day one." },
     { title: "Direct Support", description: "Talk straight to the person building your site — no ticket queues." },
     { title: "Fast Turnaround", description: "Most builds go from brief to live in a matter of days." },
   ],
@@ -191,7 +200,7 @@ export const clientConfig = {
   seo: {
     title: "Webdesign Studio — Landing Pages, Designed & Hosted for ₹4,999",
     description:
-      "Webdesign Studio designs and ships custom landing pages hosted on Netlify for a fixed ₹4,999 launch price. Browse live work and get started on WhatsApp.",
+      "Webdesign Studio designs and ships custom landing pages hosted on Cloudflare Pages for a fixed ₹4,999 launch price. Browse live work and get started on WhatsApp.",
     url: "https://webdesign-studio.example.com",
   },
 } as const;
