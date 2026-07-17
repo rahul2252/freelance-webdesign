@@ -1,13 +1,13 @@
-// Central config for the Webdesign Studio portfolio/agency landing page.
+// Central config for the BLR Webdesigner portfolio/agency landing page.
 // Real business content lives here — keep it accurate, not placeholder.
 
 export const clientConfig = {
   brand: {
-    name: "Webdesign Studio",
-    logoText: "WEBDESIGN STUDIO",
+    name: "BLR Webdesigner",
+    logoText: "BLR WEBDESIGNER",
     tagline: "Landing pages that launch in days, not months",
     description:
-      "Webdesign Studio designs and ships high-converting landing pages, hosted on Cloudflare Pages, for a fixed launch price.",
+      "BLR Webdesigner designs and ships high-converting landing pages, hosted on your own domain, on a simple monthly or yearly plan.",
   },
 
   theme: {
@@ -23,27 +23,28 @@ export const clientConfig = {
   },
 
   nav: [
-    { label: "Work", href: "#work" },
-    { label: "Process", href: "#process" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Contact", href: "#contact" },
+    { label: "Work", href: "/#work" },
+    { label: "Process", href: "/#process" },
+    { label: "Pricing", href: "/#pricing" },
+    { label: "Policy", href: "/policy" },
+    { label: "Contact", href: "/#contact" },
   ],
 
   hero: {
-    eyebrow: "Design + Build + Host — One Fixed Price",
+    eyebrow: "Design + Build + Host — Monthly or Yearly",
     heading: "WE BUILD LANDING PAGES THAT WORK",
     tagline:
-      "Custom-designed, fully responsive landing pages — designed, built, and hosted on Cloudflare Pages. Live in days.",
+      "Custom-designed, fully responsive landing pages — built and hosted on your own domain. Live in days.",
     ctaLabel: "Start Your Project",
     ctaHref: "#contact",
     secondaryCtaLabel: "View Our Work",
     secondaryCtaHref: "#work",
-    priceBadge: "₹4,999 Launch Price",
+    priceBadge: "Plans From ₹799/Month",
   },
 
   marquee: [
     "LANDING PAGE DESIGN",
-    "CLOUDFLARE PAGES",
+    "HOSTING INCLUDED",
     "WHATSAPP INTEGRATION",
     "MOBILE-FIRST BUILDS",
     "FAST TURNAROUND",
@@ -148,7 +149,7 @@ export const clientConfig = {
       {
         number: "03",
         title: "Build & Deploy",
-        description: "Built responsive, fast, and deployed live on Cloudflare Pages.",
+        description: "Built responsive, fast, and deployed live on your own domain.",
       },
       {
         number: "04",
@@ -159,29 +160,78 @@ export const clientConfig = {
   },
 
   pricing: {
-    heading: "Simple, Fixed Pricing",
-    subheading: "Launch Offer",
-    price: "₹4,999",
-    priceNote: "one-time launch price",
-    features: [
-      "Custom landing page design",
-      "Fully responsive, mobile-first build",
-      "Hosted live on Cloudflare Pages",
-      "WhatsApp click-to-chat integration",
-      "SEO-ready structure",
-      "Direct WhatsApp support",
+    heading: "Simple Monthly & Yearly Plans",
+    subheading: "Pricing",
+    policyNote:
+      "Every plan includes a custom landing page, contact form, WhatsApp button, and hosting on your own domain — up to 10 images. Design changes after your site is live are billed separately.",
+    policyHref: "/policy",
+    plans: [
+      {
+        id: "monthly",
+        label: "Monthly",
+        price: "₹799",
+        period: "/month",
+        billingNote: "Billed monthly, cancel anytime",
+      },
+      {
+        id: "yearly",
+        label: "Yearly",
+        price: "₹8,499",
+        period: "/year",
+        billingNote: "Billed once a year",
+        badge: "Save ₹1,089 (11%)",
+        effectiveNote: "Works out to about ₹708/month",
+      },
     ],
-    domainNote:
-      "Hosting on a Cloudflare Pages subdomain is included. If you'd like a custom domain, you're welcome to bring your own — domain purchase and yearly renewal are billed separately, at cost.",
+    features: [
+      "Custom-designed landing page",
+      "Contact form included",
+      "WhatsApp click-to-chat button",
+      "Hosting on your own domain",
+      "Up to 10 images",
+      "Mobile-responsive, fast-loading build",
+    ],
     ctaLabel: "Get Started on WhatsApp",
   },
 
   highlights: [
-    { title: "Fixed Price", description: "₹4,999, no surprise costs. What you see is what you pay." },
-    { title: "Cloudflare Pages Hosting Included", description: "Your site goes live on fast, reliable hosting from day one." },
+    { title: "Monthly & Yearly Plans", description: "From ₹799/month, no hidden setup fees." },
+    { title: "Hosting On Your Domain", description: "Your site goes live on your own domain, fully managed for you." },
     { title: "Direct Support", description: "Talk straight to the person building your site — no ticket queues." },
     { title: "Fast Turnaround", description: "Most builds go from brief to live in a matter of days." },
   ],
+
+  policy: {
+    subheading: "Terms",
+    heading: "Hosting & Design Policy",
+    intro:
+      "A quick, transparent look at what's included in your plan and what counts as extra work — please read before subscribing.",
+    included: [
+      "1 custom-designed landing page (up to 8 sections)",
+      "Up to 10 images across the page",
+      "1 contact form",
+      "WhatsApp click-to-chat button",
+      "Hosting on your own domain",
+      "Mobile-responsive, fast-loading build",
+    ],
+    additional: [
+      "Design or content changes requested after your site is finalized and live",
+      "Images beyond the 10 included",
+      "Extra sections or additional pages",
+      "Rebrands, redesigns, or structural changes",
+    ],
+    additionalNote:
+      "Extra work is quoted and billed separately — message us on WhatsApp and we'll confirm the cost before starting anything.",
+    terms: [
+      "Billed monthly (₹799) or yearly (₹8,499) — yearly saves you ₹1,089 (11%).",
+      "3 rounds of revisions are included free before your site is finalized and launched.",
+      "If you'd like to provide your own domain instead, pricing may be adjusted — this is confirmed with you directly before we start.",
+      "If your subscription lapses or is cancelled, your site stays live for a 30-day grace period before it's taken offline.",
+      "Payments are accepted via UPI or bank transfer — details are shared directly on WhatsApp.",
+      "Information submitted through your contact form is used only to respond to your enquiry and is never sold or shared with third parties.",
+    ],
+    acceptClause: "By subscribing to a Monthly or Yearly plan, you automatically agree to this policy.",
+  },
 
   contact: {
     heading: "Let's Build Your Page",
@@ -198,10 +248,10 @@ export const clientConfig = {
   },
 
   seo: {
-    title: "Webdesign Studio — Landing Pages, Designed & Hosted for ₹4,999",
+    title: "BLR Webdesigner — Landing Pages From ₹799/Month",
     description:
-      "Webdesign Studio designs and ships custom landing pages hosted on Cloudflare Pages for a fixed ₹4,999 launch price. Browse live work and get started on WhatsApp.",
-    url: "https://webdesign-studio.example.com",
+      "BLR Webdesigner designs and ships custom landing pages hosted on your own domain, from ₹799/month or ₹8,499/year. Browse live work and get started on WhatsApp.",
+    url: "https://blr-webdesigner.example.com",
   },
 } as const;
 

@@ -10,7 +10,7 @@ export default function Header() {
     <header className="fixed top-0 inset-x-0 z-50 bg-ink border-b-2 border-paper">
       <div className="mx-auto max-w-7xl px-5 lg:px-8 flex items-center justify-between h-16 md:h-20">
         <a
-          href="#home"
+          href="/#home"
           className="font-serif font-bold text-sm md:text-base tracking-tight text-paper uppercase"
         >
           {clientConfig.brand.logoText}
