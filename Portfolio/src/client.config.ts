@@ -7,7 +7,7 @@ export const clientConfig = {
     logoText: "BLR WEBDESIGNER",
     tagline: "Landing pages that launch in days, not months",
     description:
-      "BLR Webdesigner designs and ships high-converting landing pages, hosted on your own domain, on a simple monthly or yearly plan.",
+      "BLR Webdesigner designs and ships high-converting landing pages, hosted on your own domain, on one simple yearly plan.",
   },
 
   theme: {
@@ -31,7 +31,7 @@ export const clientConfig = {
   ],
 
   hero: {
-    eyebrow: "Design + Build + Host — Monthly or Yearly",
+    eyebrow: "Design + Build + Host — One Yearly Plan",
     heading: "WE BUILD LANDING PAGES THAT WORK",
     tagline:
       "Custom-designed, fully responsive landing pages — built and hosted on your own domain. Live in days.",
@@ -39,7 +39,7 @@ export const clientConfig = {
     ctaHref: "#contact",
     secondaryCtaLabel: "View Our Work",
     secondaryCtaHref: "#work",
-    priceBadge: "Plans From ₹799/Month",
+    priceBadge: "₹8,499/Year — Domain Included",
   },
 
   marquee: [
@@ -160,34 +160,22 @@ export const clientConfig = {
   },
 
   pricing: {
-    heading: "Simple Monthly & Yearly Plans",
+    heading: "One Simple Yearly Plan",
     subheading: "Pricing",
     policyNote:
-      "Every plan includes a custom landing page, contact form, WhatsApp button, and hosting on your own domain — up to 10 images. Design changes after your site is live are billed separately.",
+      "Includes a custom landing page, contact form, WhatsApp button, hosting, and your first year of domain registration — up to 10 images. Design changes after your site is live are billed separately.",
     policyHref: "/policy",
-    plans: [
-      {
-        id: "monthly",
-        label: "Monthly",
-        price: "₹799",
-        period: "/month",
-        billingNote: "Billed monthly, cancel anytime",
-      },
-      {
-        id: "yearly",
-        label: "Yearly",
-        price: "₹8,499",
-        period: "/year",
-        billingNote: "Billed once a year",
-        badge: "Save ₹1,089 (11%)",
-        effectiveNote: "Works out to about ₹708/month",
-      },
-    ],
+    plan: {
+      price: "₹8,499",
+      period: "/year",
+      billingNote: "Billed once a year — includes your first year of domain registration",
+    },
     features: [
       "Custom-designed landing page",
       "Contact form included",
       "WhatsApp click-to-chat button",
       "Hosting on your own domain",
+      "1-year domain registration included",
       "Up to 10 images",
       "Mobile-responsive, fast-loading build",
     ],
@@ -195,7 +183,7 @@ export const clientConfig = {
   },
 
   highlights: [
-    { title: "Monthly & Yearly Plans", description: "From ₹799/month, no hidden setup fees." },
+    { title: "₹8,499 / Year", description: "One yearly plan — domain registration included for year 1." },
     { title: "Hosting On Your Domain", description: "Your site goes live on your own domain, fully managed for you." },
     { title: "Direct Support", description: "Talk straight to the person building your site — no ticket queues." },
     { title: "Fast Turnaround", description: "Most builds go from brief to live in a matter of days." },
@@ -212,6 +200,7 @@ export const clientConfig = {
       "1 contact form",
       "WhatsApp click-to-chat button",
       "Hosting on your own domain",
+      "1-year domain registration (year 1 only)",
       "Mobile-responsive, fast-loading build",
     ],
     additional: [
@@ -223,14 +212,15 @@ export const clientConfig = {
     additionalNote:
       "Extra work is quoted and billed separately — message us on WhatsApp and we'll confirm the cost before starting anything.",
     terms: [
-      "Billed monthly (₹799) or yearly (₹8,499) — yearly saves you ₹1,089 (11%).",
+      "Billed yearly at ₹8,499, which includes your first year of domain registration.",
+      "From year 2 onward, domain renewal is billed separately at approximately ₹1,999/year — the exact price may vary based on your root domain (e.g. .com, .in, .store) and is confirmed before renewal.",
       "3 rounds of revisions are included free before your site is finalized and launched.",
       "If you'd like to provide your own domain instead, pricing may be adjusted — this is confirmed with you directly before we start.",
       "If your subscription lapses or is cancelled, your site stays live for a 30-day grace period before it's taken offline.",
       "Payments are accepted via UPI or bank transfer — details are shared directly on WhatsApp.",
       "Information submitted through your contact form is used only to respond to your enquiry and is never sold or shared with third parties.",
     ],
-    acceptClause: "By subscribing to a Monthly or Yearly plan, you automatically agree to this policy.",
+    acceptClause: "By subscribing to the Yearly plan, you automatically agree to this policy.",
   },
 
   contact: {
@@ -248,9 +238,9 @@ export const clientConfig = {
   },
 
   seo: {
-    title: "BLR Webdesigner — Landing Pages From ₹799/Month",
+    title: "BLR Webdesigner — Landing Pages From ₹8,499/Year, Domain Included",
     description:
-      "BLR Webdesigner designs and ships custom landing pages hosted on your own domain, from ₹799/month or ₹8,499/year. Browse live work and get started on WhatsApp.",
+      "BLR Webdesigner designs and ships custom landing pages hosted on your own domain, from ₹8,499/year with your first year of domain registration included. Browse live work and get started on WhatsApp.",
     url: "https://blr-webdesigner.example.com",
   },
 } as const;

@@ -39,7 +39,7 @@ export default function RootLayout({
     "@type": "ProfessionalService",
     name: clientConfig.brand.name,
     description: clientConfig.brand.description,
-    priceRange: "₹799–₹8,499",
+    priceRange: "₹8,499",
     areaServed: "IN",
     url: clientConfig.seo.url,
   };
