@@ -57,7 +57,7 @@ export default function Policy() {
 
         <Reveal delay={150} className="mt-6 md:mt-8 brutal-border border-paper bg-ink p-6 md:p-8">
           <h3 className="font-serif font-bold text-lg text-paper mb-5 uppercase tracking-tight">
-            Subscription Terms
+            Payment & Domain Terms
           </h3>
           <ul className="flex flex-col gap-3 mb-6">
             {terms.map((item) => (

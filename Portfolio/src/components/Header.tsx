@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { clientConfig } from "@/client.config";
+import Logo from "@/components/Logo";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -9,11 +10,8 @@ export default function Header() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-ink border-b-2 border-paper">
       <div className="mx-auto max-w-7xl px-5 lg:px-8 flex items-center justify-between h-16 md:h-20">
-        <a
-          href="/#home"
-          className="font-serif font-bold text-sm md:text-base tracking-tight text-paper uppercase"
-        >
-          {clientConfig.brand.logoText}
+        <a href="/#home" aria-label={clientConfig.brand.name} className="shrink-0">
+          <Logo className="h-8 md:h-9 w-auto" />
         </a>
 
         <nav className="hidden md:flex items-center gap-9">

@@ -37,8 +37,19 @@ export default function Pricing() {
         </Reveal>
 
         <Reveal>
-          <div className="brutal-border border-paper brutal-shadow bg-panel p-8 md:p-12">
+          <div className="relative brutal-border border-paper brutal-shadow bg-panel p-8 md:p-12">
+            {"badge" in plan && plan.badge && (
+              <span className="absolute -top-4 left-8 md:left-12 bg-magenta text-ink text-[10px] font-bold uppercase tracking-[0.1em] px-3 py-1.5 brutal-border border-ink whitespace-nowrap">
+                {plan.badge}
+              </span>
+            )}
+
             <div className="flex items-baseline gap-3 mb-2">
+              {"originalPrice" in plan && plan.originalPrice && (
+                <span className="font-serif text-2xl md:text-3xl text-paper/40 line-through">
+                  {plan.originalPrice}
+                </span>
+              )}
               <span className="font-serif font-black text-5xl md:text-6xl text-paper">
                 {plan.price}
               </span>

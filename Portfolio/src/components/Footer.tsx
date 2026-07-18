@@ -1,13 +1,12 @@
 import { clientConfig } from "@/client.config";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   return (
     <footer className="bg-ink border-t-2 border-paper text-paper/70 px-5 lg:px-8 py-14">
       <div className="mx-auto max-w-6xl grid gap-10 md:grid-cols-3">
         <div>
-          <p className="font-serif font-bold text-lg text-paper mb-3 uppercase tracking-tight">
-            {clientConfig.brand.logoText}
-          </p>
+          <Logo className="h-8 w-auto mb-3" />
           <p className="text-sm font-light leading-relaxed max-w-xs">
             {clientConfig.brand.description}
           </p>

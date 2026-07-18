@@ -1,13 +1,13 @@
-// Central config for the BLR Webdesigner portfolio/agency landing page.
+// Central config for the BLR Webdesign portfolio/agency landing page.
 // Real business content lives here — keep it accurate, not placeholder.
 
 export const clientConfig = {
   brand: {
-    name: "BLR Webdesigner",
-    logoText: "BLR WEBDESIGNER",
+    name: "BLR Webdesign",
+    logoText: "BLR WEBDESIGN",
     tagline: "Landing pages that launch in days, not months",
     description:
-      "BLR Webdesigner designs and ships high-converting landing pages, hosted on your own domain, on one simple yearly plan.",
+      "BLR Webdesign designs and ships high-converting landing pages, hosted on your own domain, for a simple one-time fee.",
   },
 
   theme: {
@@ -31,7 +31,7 @@ export const clientConfig = {
   ],
 
   hero: {
-    eyebrow: "Design + Build + Host — One Yearly Plan",
+    eyebrow: "Design + Build + Host — One-Time Fee",
     heading: "WE BUILD LANDING PAGES THAT WORK",
     tagline:
       "Custom-designed, fully responsive landing pages — built and hosted on your own domain. Live in days.",
@@ -39,7 +39,7 @@ export const clientConfig = {
     ctaHref: "#contact",
     secondaryCtaLabel: "View Our Work",
     secondaryCtaHref: "#work",
-    priceBadge: "₹8,499/Year — Domain Included",
+    priceBadge: "₹8,499 Launch Offer",
   },
 
   marquee: [
@@ -160,15 +160,18 @@ export const clientConfig = {
   },
 
   pricing: {
-    heading: "One Simple Yearly Plan",
+    heading: "Simple, One-Time Pricing",
     subheading: "Pricing",
     policyNote:
-      "Includes a custom landing page, contact form, WhatsApp button, hosting, and your first year of domain registration — up to 10 images. Design changes after your site is live are billed separately.",
+      "One-time payment includes a custom landing page, contact form, WhatsApp button, hosting, and your first year of domain registration — up to 10 images. Domain renewal after year 1 is paid directly to your registrar. Design changes after your site is live are billed separately.",
     policyHref: "/policy",
     plan: {
+      originalPrice: "₹15,499",
       price: "₹8,499",
-      period: "/year",
-      billingNote: "Billed once a year — includes your first year of domain registration",
+      period: "one-time",
+      badge: "Launch Offer",
+      billingNote:
+        "One-time payment — includes your first year of domain registration. Renewal after year 1 is paid directly to your registrar.",
     },
     features: [
       "Custom-designed landing page",
@@ -183,7 +186,7 @@ export const clientConfig = {
   },
 
   highlights: [
-    { title: "₹8,499 / Year", description: "One yearly plan — domain registration included for year 1." },
+    { title: "₹8,499 Launch Offer", description: "Limited-time launch price (usually ₹15,499) — domain registration included for year 1." },
     { title: "Hosting On Your Domain", description: "Your site goes live on your own domain, fully managed for you." },
     { title: "Direct Support", description: "Talk straight to the person building your site — no ticket queues." },
     { title: "Fast Turnaround", description: "Most builds go from brief to live in a matter of days." },
@@ -193,7 +196,7 @@ export const clientConfig = {
     subheading: "Terms",
     heading: "Hosting & Design Policy",
     intro:
-      "A quick, transparent look at what's included in your plan and what counts as extra work — please read before subscribing.",
+      "A quick, transparent look at what's included in your plan and what counts as extra work — please read before you proceed.",
     included: [
       "1 custom-designed landing page (up to 8 sections)",
       "Up to 10 images across the page",
@@ -212,15 +215,15 @@ export const clientConfig = {
     additionalNote:
       "Extra work is quoted and billed separately — message us on WhatsApp and we'll confirm the cost before starting anything.",
     terms: [
-      "Billed yearly at ₹8,499, which includes your first year of domain registration.",
-      "From year 2 onward, domain renewal is billed separately at approximately ₹1,999/year — the exact price may vary based on your root domain (e.g. .com, .in, .store) and is confirmed before renewal.",
+      "One-time payment of ₹8,499, which includes your first year of domain registration.",
+      "From year 2 onward, domain renewal is your responsibility, paid directly to the domain registrar — pricing varies by registrar and root domain (e.g. .com, .in, .store).",
       "3 rounds of revisions are included free before your site is finalized and launched.",
       "If you'd like to provide your own domain instead, pricing may be adjusted — this is confirmed with you directly before we start.",
-      "If your subscription lapses or is cancelled, your site stays live for a 30-day grace period before it's taken offline.",
+      "If you don't renew your domain, your site will go offline once it expires — this is between you and your domain registrar and outside our control.",
       "Payments are accepted via UPI or bank transfer — details are shared directly on WhatsApp.",
       "Information submitted through your contact form is used only to respond to your enquiry and is never sold or shared with third parties.",
     ],
-    acceptClause: "By subscribing to the Yearly plan, you automatically agree to this policy.",
+    acceptClause: "By purchasing this plan, you automatically agree to this policy.",
   },
 
   contact: {
@@ -238,10 +241,10 @@ export const clientConfig = {
   },
 
   seo: {
-    title: "BLR Webdesigner — Landing Pages From ₹8,499/Year, Domain Included",
+    title: "BLR Webdesign — Landing Pages, ₹8,499 Launch Offer (was ₹15,499)",
     description:
-      "BLR Webdesigner designs and ships custom landing pages hosted on your own domain, from ₹8,499/year with your first year of domain registration included. Browse live work and get started on WhatsApp.",
-    url: "https://blr-webdesigner.example.com",
+      "BLR Webdesign designs and ships custom landing pages hosted on your own domain for a launch price of ₹8,499 (usually ₹15,499), including your first year of domain registration. Browse live work and get started on WhatsApp.",
+    url: "https://blr-webdesign.example.com",
   },
 } as const;
 
