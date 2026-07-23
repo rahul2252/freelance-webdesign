@@ -44,13 +44,13 @@ export default function Pricing() {
               </span>
             )}
 
-            <div className="flex items-baseline gap-3 mb-2">
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
               {"originalPrice" in plan && plan.originalPrice && (
-                <span className="font-serif text-2xl md:text-3xl text-paper/40 line-through">
+                <span className="font-serif text-lg sm:text-2xl md:text-3xl text-paper/40 line-through">
                   {plan.originalPrice}
                 </span>
               )}
-              <span className="font-serif font-black text-5xl md:text-6xl text-paper">
+              <span className="font-serif font-black text-4xl sm:text-5xl md:text-6xl text-paper">
                 {plan.price}
               </span>
               <span className="text-paper/60 text-sm uppercase tracking-[0.1em]">
